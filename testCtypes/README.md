@@ -18,3 +18,6 @@ is called by the python script **test.py**, we can run it over mpi as,
 
 where #numofthreads is the number of threads we want to use.
 
+### TODO
+
+An example where we pass arguments to a c file from python and then return the result back to python.  

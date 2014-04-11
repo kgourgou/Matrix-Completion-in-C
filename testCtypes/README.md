@@ -1,13 +1,13 @@
 C and Python 
 =============
 
-In this folder, I wrote an example of the use of ctypes to use C and python code together.
+In this folder, I wrote an example of the use of ctypes to combine C and python code together.
 
 ## HOW-TO
 
 C files have to be compiled as shared libraries as seen in the makefile of this folder. 
 
-Then, they can be called from inside python by using ctypes. 
+Then, they can be called from inside python, after being loaded as libraries. 
 
 ### Using MPI
 

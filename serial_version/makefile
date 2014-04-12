@@ -8,7 +8,7 @@ flags = -O3 -Wall
 # Add the rest of the objects here
 
 dep = matCompl.h matFunctions.h
-objects = main.o test_mat.o matFunctions.o
+objects = main.o test_mat.o matFunctions.o RMSE.o
 
 
 
@@ -22,7 +22,7 @@ a.out : $(OBJ)
         
 
 $(obj_dir)/%.o : %.c $(dep)
-	$(cc) $(flags) -c $< -o $@
+	$(cc) $(flags) -c $< -o $@ -lm 
  
 
 clean :

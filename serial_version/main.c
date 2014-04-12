@@ -4,9 +4,7 @@
 	
 */
 
-#include<stdio.h>
-#include<stdlib.h>
-
+#include "matCompl.h"
 
 int main(void){ 
 
@@ -14,5 +12,3 @@ int main(void){
  return 0;
 
 }
-
-

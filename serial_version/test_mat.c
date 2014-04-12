@@ -8,7 +8,7 @@
 */
 double** test_mat(int r, int m){
 	int i, j;
-	A = alloc_array(m, m);		//create an mxm matrix
+	double** A  = alloc_array(m, m);		//create an mxm matrix
 	for( i = 0; i < m; i++){
 		for( j = 0; j < m; j++ ){
 			A[i][j] = rand();

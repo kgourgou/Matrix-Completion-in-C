@@ -7,8 +7,8 @@ flags = -O3
 
 # Add the rest of the objects here
 
-dep = matCompl.h matAlloc.h
-objects = main.o matAlloc.o
+dep = matCompl.h matFunctions.h
+objects = main.o test_mat.o matFunctions.o
 
 
 

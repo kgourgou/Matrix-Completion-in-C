@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 //#include<clapack.h>
-#include "matAlloc.h"
+#include "matFunctions.h"
 
 /*
 	Templates for the functions used in the serial version of our code. 

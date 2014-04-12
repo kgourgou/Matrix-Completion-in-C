@@ -1,15 +1,22 @@
 #include "matCompl.h"
+#include "math.h"
 
 /*
  
  RMSE() computes the root mean square error between the matrix X and the matrix M, both having
- size (m x m).
+ size (ncols x nrows).
 
 */
 
-double RMSE(double** X, double** M, int  m){
-	
-	
-	
+double RMSE(double** X, double** M, int  ncols, int nrows){
+
+ int i,j;
+ double error = 0.0;
+
+ for(i = 0; i < nrows; i++){
+  for(j = 0;j < nrows; j++){
+   error +=   
+  }
+ }	
 	
 }

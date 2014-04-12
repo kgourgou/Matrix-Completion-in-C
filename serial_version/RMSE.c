@@ -1,5 +1,5 @@
 #include "matCompl.h"
-#include <math.h>
+#include<math.h>
 
 /*
  
@@ -19,7 +19,7 @@ double RMSE(double** X, double** M, int  ncols, int nrows){
  for(i = 0; i < nrows; i++){
   for(j = 0;j < ncols; j++){
    
-#   error += pow((X[i][j]-M[i][j]),2); 
+  error += pow((X[i][j]-M[i][j]),2); 
   }
  }	
 

@@ -11,7 +11,7 @@ double** test_mat(int r, int numRows, int numCols){
 	double** A  = alloc_array(numRows, numCols);		//create an mxm matrix
 	for( i = 0; i < numRows; i++){
 		for( j = 0; j < numCols; j++ ){
-			A[i][j] = rand();
+			A[i][j] = (double)rand()/RAND_MAX;
 		}
 	}
 	return A;

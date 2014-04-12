@@ -8,12 +8,12 @@
 #include "matCompl.h"
 
 int main(void){ 
- int numRows = 5;
- int numCols = 5;
+ int nrows = 5;
+ int ncols = 5;
  int rank = 3;
- double **A = test_mat(rank, numRows, numCols);
- printmat(A, numRows, numCols);
- free_array(A,numRows); 
+ double **A = test_mat(rank, nrows, ncols);
+ print_mat(A, nrows, ncols);
+ free_array(A,nrows); 
  return 0;
 
 }

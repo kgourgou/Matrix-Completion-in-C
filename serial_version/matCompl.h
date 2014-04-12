@@ -13,8 +13,7 @@
   singular value decomposition is used. 
 
 */
-
-double** test_mat(int r, int numRows, numCols);
+double** test_mat(int r, int numRows, int numCols);
 
 /*
  shrink(double** A, double t, int M) applies the shrink operator on A with thresholding parameter t. 

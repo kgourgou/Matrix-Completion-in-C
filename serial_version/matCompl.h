@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-
 #include "clapack.h"
 #include "matFunctions.h"
 

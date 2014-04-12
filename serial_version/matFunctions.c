@@ -24,3 +24,15 @@ void free_array(double** A, int nrows){
  free(A);
 }
 
+void print_mat(double** A, int nrows, int ncols){
+
+int i,j;
+
+ for(i = 0;i < nrows;i++){
+   for(j = 0;j < ncols;j++){
+    printf("%1.3f ",A[i][j]);
+   }
+   printf("\n");
+ }
+
+}

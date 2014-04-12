@@ -1,3 +1,7 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<clapack.h>
+
 /*
 	Templates for the functions used in the serial version of our code. 
 */

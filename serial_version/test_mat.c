@@ -2,16 +2,17 @@
 
 /*
 
-  test_mat(int r, int m) returns an (M x M) matrix of rank r. For the construction of the matrix, the 
+  test_mat(int r, int numRows, int numCols) returns an (numRows x numCols) matrix of rank r. For the construction of the matrix, the 
   singular value decomposition is used. 
 
 */
-double** test_mat(int r, int m){
+double** test_mat(int r, int numRows, int numCols){
 	int i, j;
-	double** A  = alloc_array(m, m);		//create an mxm matrix
-	for( i = 0; i < m; i++){
-		for( j = 0; j < m; j++ ){
+	double** A  = alloc_array(numRows, numCols);		//create an mxm matrix
+	for( i = 0; i < numRows; i++){
+		for( j = 0; j < numCols; j++ ){
 			A[i][j] = rand();
 		}
 	}
+	return A;
 }

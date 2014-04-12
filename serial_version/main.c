@@ -8,8 +8,10 @@
 #include "matCompl.h"
 
 int main(void){ 
- int i,j;
-  
+ int nrows = 5;
+ int ncols = 5;
+ int rank = 3;
+ double **A = test_mat(rank, nrows, ncols);
+ free_array(A,nrows); 
  return 0;
-
 }

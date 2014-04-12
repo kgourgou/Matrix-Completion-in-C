@@ -3,7 +3,7 @@
 
 cc = gcc
 
-flags = -O3 
+flags = -O3 -Wall  
 
 # Add the rest of the objects here
 

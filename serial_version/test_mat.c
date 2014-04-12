@@ -11,14 +11,12 @@ double** test_mat(int r, int nrows, int ncols){
 	double** A  = alloc_array(nrows, ncols);		//create an mxm matrix
 	double** U = alloc_array(nrows, nrows);
 	double** VT = alloc_array(ncols, ncols);
-	double** S = alloc_array(
+	
 	for( i = 0; i < nrows; i++){
 		for( j = 0; j < ncols; j++ ){
 			A[i][j] = (double)rand()/RAND_MAX;
 		}
 	}
-	//      SUBROUTINE DGESVD( JOBU, JOBVT, M, N, A, LDA, S, U, LDU, VT, LDVT, WORK, LWORK, INFO )
-	DGESVD('A', 'A', nrows, ncols, A, nrows,  
 	
 	
 	return A;

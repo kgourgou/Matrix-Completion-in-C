@@ -12,6 +12,8 @@ int main(void){
  int ncols = 5;
  int rank = 3;
  double **A = test_mat(rank, nrows, ncols);
+
+ 
  free_array(A,nrows); 
  return 0;
 }

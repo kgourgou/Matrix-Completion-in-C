@@ -53,7 +53,7 @@ double** shrink(double** A, double t, int m);
 
 */
 
-double** SVT(double** X, double** M, int maxIter, double tol, int M)
+double** SVT(double** X, double** M, int maxIter, double tol, int M);
 
 
 /*

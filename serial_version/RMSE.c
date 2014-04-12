@@ -1,5 +1,4 @@
 #include "matCompl.h"
-#include<math.h>
 
 /*
  

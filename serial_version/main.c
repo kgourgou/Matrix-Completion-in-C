@@ -12,8 +12,18 @@ int main(void){
  int ncols = 5;
  int rank = 3;
  double **A = test_mat(rank, nrows, ncols);
+ double **B = test_mat(rank, nrows, ncols);
+         
+ int i,j;
+
+ for(i = 0; i < nrows;i++){
+     for(j = 0; j < ncols;j++){
+        A[i][j] = i+j;
+     }
+ }
 
  
+ free_array(B,nrows);
  free_array(A,nrows); 
  return 0;
 }

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 #include <math.h>
-#include "clapack.h"
+//#include "lapack.h"
 
 #include "matFunctions.h"
 

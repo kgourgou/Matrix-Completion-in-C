@@ -7,9 +7,14 @@
 
 */
 
+
+
 double RMSE(double** X, double** M, int  ncols, int nrows){
 /*
   General version of RMSE. 
+
+  Note that this version is terribly inefficient for what we want to do. 
+
 */
 
  int i,j;
@@ -25,3 +30,15 @@ double RMSE(double** X, double** M, int  ncols, int nrows){
  return sqrt(error/(nrows*ncols));
 	
 }
+
+/*
+ *
+ * Another version of RMSE should be added here that calculates the RMSE for only the 
+ * unknown elements.
+ *
+ * A possible definition could be : 
+ *
+ * double RMSE2(double** X, double **M, int ** indices, int ncols, int rows)
+ *
+ * * */
+

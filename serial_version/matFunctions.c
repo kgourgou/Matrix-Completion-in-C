@@ -1,7 +1,18 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+/*
+ *
+ *
+ * */
+
 double** alloc_array(int nrows, int ncol){
+
+    /*
+     *  
+     * Allocates an nrows x ncols matrix.  
+     *
+     * */
 
  int i;
  double** A = (double**) (malloc(nrows* sizeof(double*)));
@@ -15,6 +26,11 @@ double** alloc_array(int nrows, int ncol){
 
 
 void free_array(double** A, int nrows){
+/*
+ * Frees an array created by alloc_array.
+ *
+ * */
+
  int i;
 
  for(i = 0; i < nrows; i++){
@@ -25,7 +41,10 @@ void free_array(double** A, int nrows){
 }
 
 void print_mat(double** A, int nrows, int ncols){
-
+/*
+ * Prints an nrows x ncols array as a matrix.
+ *
+ * */
 int i,j;
 
  for(i = 0;i < nrows;i++){

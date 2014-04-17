@@ -3,3 +3,6 @@ serial_version/obj/
 *.out
 *.so
 clapack.h
+.gitignore
+serial_version/lapack.h
+serial_version/math.h

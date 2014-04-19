@@ -2,7 +2,11 @@
 #include <stdlib.h>
 
 #include <math.h>
-#include "clapack.h"
+
+#if __APPLE__
+    #include "clapack.h"
+#endif
+
 #include "matFunctions.h"
 
 /*

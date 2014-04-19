@@ -47,7 +47,7 @@ int i,j;
 
  for(i = 0;i < nrows;i++){
    for(j = 0;j < ncols;j++){
-    printf("%1.3f ",A[i]);
+     printf("%1.3f ",A[i]);
    }
    printf("\n");
  }

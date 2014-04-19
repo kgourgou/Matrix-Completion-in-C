@@ -5,20 +5,24 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 OBJ	makefile	/^OBJ = $(patsubst %, $(obj_dir)\/%,$(objects))$/;"	m
+Proj	Proj.c	/^void Proj(double *A, int* Omega, int kn, double* Z){$/;"	f
+Proj_sub	Proj.c	/^void Proj_sub(double *A, double *B, int* Omega, int kn, double* Z){$/;"	f
 RMSE	RMSE.c	/^double RMSE(double* X, double* M, int  ncols, int nrows){$/;"	f
+RMSE2	RMSE.c	/^double RMSE2(double* X, double* M, int* omega, int kn){$/;"	f
 SVT	SVT.c	/^double* SVT(double* X, double* M, int maxIter, double tol, int M){$/;"	f
 alloc_array	matFunctions.c	/^double* alloc_array(int nrows, int ncol){$/;"	f
 alloc_array_z	matFunctions.c	/^double* alloc_array_z(int nrows, int ncol){$/;"	f
 cc	makefile	/^cc = gcc$/;"	m
 dep	makefile	/^dep = matCompl.h matFunctions.h$/;"	m
-diag	matFunctions.c	/^double* diag(double* A, int arows){$/;"	f
+diag	matFunctions.c	/^double* diag(double* A, int arows, int acols){$/;"	f
 flags	makefile	/^flags =  -Wall  $/;"	m
 free_array	matFunctions.c	/^void free_array(double* A){$/;"	f
+ma	matFunctions.c	/^double* ma(double* A, int arows, int acols, double ascalar, double* B, int brows, int bcols, double bscalar, int* omega, int kn){$/;"	f
 main	main.c	/^int main(void){ $/;"	f
 map	matFunctions.c	/^int map(int i, int j, int ncols, char transpose){$/;"	f
-mm	matFunctions.c	/^double* mm(double* A, int arows, int acols, double* B, int brows, int bcols){$/;"	f
+mm	matFunctions.c	/^double* mm(double* A, int arows, int acols, char transA, double* B, int brows, int bcols, char transB){$/;"	f
 obj_dir	makefile	/^obj_dir = obj$/;"	m
-objects	makefile	/^objects = main.o  matFunctions.o RMSE.o test_mat.o shrink.o$/;"	m
+objects	makefile	/^objects = main.o  matFunctions.o RMSE.o test_mat.o shrink.o Proj.o$/;"	m
 print_mat	matFunctions.c	/^void print_mat(double* A, int nrows, int ncols){$/;"	f
 shrink	shrink.c	/^double* shrink(double* A, double tau, int nrows, int ncols){$/;"	f
 test_mat	test_mat.c	/^double* test_mat(int r, int nrows, int ncols){$/;"	f

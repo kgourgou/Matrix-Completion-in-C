@@ -35,7 +35,7 @@ double* test_mat(int r, int nrows, int ncols){
 	
 	double* C = alloc_array_z(nrows,ncols);
 	
-	C = mm(mm(U, nrows, nrows, diag(S,nrows), nrows, ncols), nrows, ncols, VT, ncols, ncols);
+	C = mm(mm(U, nrows, nrows, 'n', diag(S,nrows, ncols), nrows, ncols, 'n'), nrows, ncols, 'n', VT, ncols, ncols, 'n');
 	
 	free_array(A);
 	free_array(WORK);

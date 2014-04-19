@@ -1,4 +1,4 @@
-int map(int i, int j, int ncols);
+int map(int i, int j, int ncols, char transpose);
 
 double* alloc_array(int nrows, int ncol);
 double* alloc_array_z(int nrows, int ncol);

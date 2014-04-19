@@ -2,8 +2,16 @@
 #include<stdlib.h>
 #include<assert.h>
 
-int map(int i, int j, int ncols){
-	return i*ncols + j;
+
+
+int map(int i, int j, int ncols, char transpose){
+	if( transpose == 't' ){
+		return j*ncols + i;
+	}	
+	else
+	{
+		return i*ncols + j;
+	}
 }
 
 double* alloc_array(int nrows, int ncol){
@@ -89,9 +97,9 @@ double* mm(double* A, int arows, int acols, double* B, int brows, int bcols){
 		for( j = 0; j < brows; j++ ){
 			sum = 0;
 			for( k = 0; k < bcols; k++ ){
-				sum = sum + A[map(i, k, acols)] * B[map(k, j, bcols)];
+				sum = sum + A[map(i, k, acols, 'n')] * B[map(k, j, bcols, 'n')];
 			}	
-			C[map(i, j, bcols)] = sum;
+			C[map(i, j, bcols, 'n')] = sum;
 		}
 	}
 	return C;
@@ -102,7 +110,7 @@ double* diag(double* A, int arows){
 	int i;
 	
 	for( i = 0; i < arows; i++){
-		C[map(i, i, arows)] = A[i];
+		C[map(i, i, arows, 'n')] = A[i];
 	}
 	return C;
 }
@@ -124,7 +132,7 @@ int i,j;
 
  for(i = 0;i < nrows;i++){
    for(j = 0;j < ncols;j++){
-     printf("%1.3f ",A[map(i,j,ncols)]);
+     printf("%1.3f ",A[map(i,j,ncols, 'n')]);
    }
    printf("\n");
  }

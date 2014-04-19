@@ -23,7 +23,7 @@ double RMSE(double* X, double* M, int  ncols, int nrows){
  for(i = 0; i < nrows; i++){
   for(j = 0;j < ncols; j++){
    
-   error += pow((X[map(i,j,ncols)]-M[map(i,j,ncols)]),2.0); 
+   error += pow((X[map(i,j,ncols, 'n')]-M[map(i,j,ncols, 'n')]),2.0); 
 
   }
  }	

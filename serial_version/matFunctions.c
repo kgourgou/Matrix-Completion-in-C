@@ -37,7 +37,7 @@ double* alloc_array_z(int nrows, int ncol){
   A =  (double*) (malloc(nrows * ncol * sizeof(double*)));
   assert(A);
   
-  for(i=0;i < ncols*nrows;i++){
+  for(i=0;i < ncol*nrows;i++){
     A[i] = 0.0;
   }
 

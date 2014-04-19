@@ -30,7 +30,8 @@ int main(void){
  
  for( i = 0; i < numIter; i++){
  	Z = shrink(Y, tau, nrows, ncols);
- 	Y = ma(Y, ncols, nrows, 1.0, Proj_sub(M, Z, omega, kn, dummyMatrix), ncols, nrows, delta, omega, kn);
+ 	Proj_sub(M, Z, omega, kn, dummyMatrix);
+ 	Y = ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn);
  }
  
  printf("%f", RMSE2(M, Z, omega, kn));

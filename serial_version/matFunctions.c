@@ -23,11 +23,28 @@ double* alloc_array(int nrows, int ncol){
 }
 
 
-/*
- *
- * Don't really need this now.
- *
- * */
+double* alloc_array_z(int nrows, int ncol){
+
+    /*
+     *  
+     * Allocates an nrows x ncols matrix with 0.  
+     *
+     * */
+
+  double* A = NULL;
+  int i;
+
+  A =  (double*) (malloc(nrows * ncol * sizeof(double*)));
+  assert(A);
+  
+  for(i=0;i < ncols*nrows;i++){
+    A[i] = 0.0;
+  }
+
+
+  return A;
+
+}
 
 void free_array(double* A){
 /*

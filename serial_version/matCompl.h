@@ -69,6 +69,6 @@ double** SVT(double** X, double** M, int maxIter, double tol, int m);
 
 */
 
-double RMSE(double** X, double** M, int  ncols, int nrows);
+double RMSE(double* X, double* M, int  ncols, int nrows);
 
 

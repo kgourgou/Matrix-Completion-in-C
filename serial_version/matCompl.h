@@ -2,9 +2,10 @@
 #include <stdlib.h>
 
 #include <math.h>
-//#include "lapack.h"
-
+#include "clapack.h"
 #include "matFunctions.h"
+
+#define 
 
 /*
 	Templates for the functions used in the serial version of our code. 

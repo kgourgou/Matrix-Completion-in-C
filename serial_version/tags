@@ -15,7 +15,7 @@ diag	matFunctions.c	/^double* diag(double* A, int arows){$/;"	f
 flags	makefile	/^flags =  -Wall  $/;"	m
 free_array	matFunctions.c	/^void free_array(double* A){$/;"	f
 main	main.c	/^int main(void){ $/;"	f
-map	matFunctions.c	/^int map(int i, int j, int ncols){$/;"	f
+map	matFunctions.c	/^int map(int i, int j, int ncols, char transpose){$/;"	f
 mm	matFunctions.c	/^double* mm(double* A, int arows, int acols, double* B, int brows, int bcols){$/;"	f
 obj_dir	makefile	/^obj_dir = obj$/;"	m
 objects	makefile	/^objects = main.o  matFunctions.o RMSE.o test_mat.o shrink.o$/;"	m

@@ -128,5 +128,5 @@ int i,j;
    }
    printf("\n");
  }
-
+   printf("\n");
 }

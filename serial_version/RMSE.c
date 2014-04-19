@@ -39,7 +39,24 @@ double RMSE(double* X, double* M, int  ncols, int nrows){
  *
  * A possible definition could be : 
  *
- * double RMSE2(double** X, double **M, int ** indices, int ncols, int rows)
+ * double RMSE2(double* X, double *M, int * omega, int kn)
  *
  * * */
+
+double RMSE2(double* X, double* M, int* omega, int kn){
+	int i;
+	 double error = 0.0;
+
+ 	for(i = 0; i < kn; i++){   
+   		error += pow((X[omega[i]]-M[omega[i]]),2.0); 
+ 	}	
+
+ return sqrt(error/kn);
+}
+
+
+
+
+
+
 

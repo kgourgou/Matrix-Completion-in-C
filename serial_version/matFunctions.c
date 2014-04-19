@@ -1,10 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/*
- *
- *
- * */
+int MAP(int i, int j, int ncols){
+	return i*ncols + j;
+}
 
 double** alloc_array(int nrows, int ncol){
 

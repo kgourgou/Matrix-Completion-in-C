@@ -22,6 +22,7 @@ int main(void){
      }
  }
 
+printf("%i\n",MAP(0,0,4));
  
  free_array(B,nrows);
  free_array(A,nrows); 

@@ -42,7 +42,6 @@ double* test_mat(int r, int nrows, int ncols){
 	free_array(U);
 	free_array(VT);
 	free_array(S);
-	//free_array(C);
 	
 	return C;
 }

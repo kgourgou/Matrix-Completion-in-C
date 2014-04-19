@@ -38,7 +38,7 @@ double* shrink(double* A, double tau, int nrows, int ncols){
 	//C = mm(mm(U, nrows, nrows, 't', diag(S,nrows, ncols), nrows, ncols, 'n'), nrows, ncols, 'n', VT, ncols, ncols, 't');
 	C = mm(mm(VT, ncols, ncols, 'n', diag(S,ncols, nrows), ncols, nrows, 'n'), ncols, nrows, 'n', U, nrows, nrows, 'n');
 	
-	free_array(A);
+	//free_array(A);
 	free_array(WORK);
 	free_array(U);
 	free_array(VT);

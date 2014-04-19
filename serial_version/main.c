@@ -24,7 +24,7 @@ int main(void){
      }
  }
  
- //A[0] = 2.0;
+ A[1] = 2.0;
  
  print_mat(mm(A, nrows, ncols, A, nrows, ncols),nrows, ncols);
  

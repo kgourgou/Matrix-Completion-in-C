@@ -28,9 +28,7 @@ double* shrink(double* A, double tau, int nrows, int ncols){
 	dgesvd_(&JOBU, &JOBVT, &nrows, &ncols, A, &nrows, S, U, &nrows, VT, &ncols, WORK, &LWORK, &info);
 
 	for( i = 0; i < fmin(nrows,ncols); i++){
-		printf("%f ", S[i]);
 		//S[i] = fmax(0.0, S[i] - tau);
-		printf("%f\n", S[i]);
 	}
 	
 	double* C = alloc_array_z(nrows,ncols);

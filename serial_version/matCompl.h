@@ -9,7 +9,6 @@
 
 #include "matFunctions.h"
 
-
 /*
 	Templates for the functions used in the serial version of our code. 
 */
@@ -20,7 +19,7 @@
   singular value decomposition is used. 
 
 */
-double** test_mat(int r, int numRows, int numCols);
+double* test_mat(int r, int numRows, int numCols);
 
 /*
  shrink(double** A, double t, int M) applies the shrink operator on A with thresholding parameter t. 

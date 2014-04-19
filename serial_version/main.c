@@ -9,7 +9,7 @@
 
 int main(void){ 
  int nrows = 4;
- int ncols = 5;
+ int ncols = 4;
  int rank = 3;
  double *A = test_mat(rank, nrows, ncols);
  double *B = test_mat(rank, nrows, ncols);
@@ -22,6 +22,8 @@ int main(void){
      }
  }
  
+
+
  free_array(B);
  free_array(A); 
  return 0;

@@ -3,7 +3,7 @@
 
 cc = gcc
 
-flags = -O3 -Wall  
+flags =  -Wall  
 
 # *.h files
 dep = matCompl.h matFunctions.h

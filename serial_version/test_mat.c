@@ -22,7 +22,7 @@ double* test_mat(int r, int nrows, int ncols){
 	for( i = 0; i < nrows; i++){
 		for( j = 0; j < ncols; j++ ){
 			if( i == j){
-				A[map(i,j,ncols)] = 1;
+				A[map(i,j,ncols)] = 1+i;
 			}
 			else{
 				A[map(i,j,ncols)] = 0;

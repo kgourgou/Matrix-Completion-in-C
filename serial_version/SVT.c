@@ -22,7 +22,7 @@
 
 */
 
-double** SVT(double** X, double** M, int maxIter, double tol, int M){
+double* SVT(double* X, double* M, int maxIter, double tol, int M){
 	
 	
 	

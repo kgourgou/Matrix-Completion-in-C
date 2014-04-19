@@ -13,7 +13,7 @@
     Then it returns B.
 
 */
-double** shrink(double** A, double t, int m){
+double* shrink(double* A, double tau, int nrows, int ncols){
 	
 	
 	

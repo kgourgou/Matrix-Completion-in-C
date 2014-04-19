@@ -55,6 +55,66 @@ void free_array(double* A){
  free(A);
 }
 
+/*
+int main(void) 
+ {
+	const int M=4, N=4, P=4;
+	int A[M][N], int B[N][P], int C[M][P];
+	for (int i = 0; i != M; ++i) 
+	{
+ 		for (int j = 0; j != N; ++j)
+		{
+			int sum = 0;
+			for (int k = 0; k != P; ++k)
+			{
+				sum += A[i][k] * B[k][j];
+			}
+			C[i][j] = sum;
+		}
+	}
+	return 0;
+ }
+*/
+
+
+
+double* mm(double* A, int arows, int acols, double* B, int brows, int bcols){
+	double* C  = alloc_array(arows, bcols);
+	double sum;
+	int i;
+	int j;
+	int k;
+	
+	for( i = 0; i < arows; i++ ){
+		for( j = 0; j < brows; j++ ){
+			sum = 0;
+			for( k = 0; k < bcols; k++ ){
+				sum = sum + A[map(i, k, acols)] * B[map(k, j, bcols)];
+			}	
+			C[map(i, j, bcols)] = sum;
+		}
+	}
+	return C;
+}
+
+double* diag(double* A, int arows){
+	double* C  = alloc_array_z(arows, arows);
+	int i;
+	
+	for( i = 0; i < arows; i++){
+		C[map(i, i, arows)] = A[i];
+	}
+	return C;
+}
+
+
+
+
+
+
+
+
+
 void print_mat(double* A, int nrows, int ncols){
 /*
  * Prints an nrows x ncols array as a matrix.

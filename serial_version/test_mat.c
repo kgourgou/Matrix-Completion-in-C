@@ -21,35 +21,28 @@ double* test_mat(int r, int nrows, int ncols){
 	
 	for( i = 0; i < nrows; i++){
 		for( j = 0; j < ncols; j++ ){
-			if( i == j){
-				A[map(i,j,ncols)] = 1;
-			}
-			else{
-				A[map(i,j,ncols)] = 0;
-			}
-			//A[map(i,j,ncols)] = (double)rand()/RAND_MAX;
+			A[map(i,j,ncols)] = (double)rand()/RAND_MAX;
 		}
 	}
 	
-	print_mat(A, nrows, ncols);
-	
-	
-	
-	//int dgesvd_(char *jobu, char *jobvt, __CLPK_integer *m, __CLPK_integer *n, 
-	//__CLPK_doublereal *a, __CLPK_integer *lda, __CLPK_doublereal *s, __CLPK_doublereal *u, __CLPK_integer *
-	//ldu, __CLPK_doublereal *vt, __CLPK_integer *ldvt, __CLPK_doublereal *work, __CLPK_integer *lwork, 
-	//__CLPK_integer *info);
-	//SUBROUTINE DGESVD( JOBU, JOBVT, M, N, A, LDA, S, U, LDU, VT, LDVT, WORK, LWORK, INFO )
 	dgesvd_(&JOBU, &JOBVT, &nrows, &ncols, A, &nrows, S, U, &nrows, VT, &ncols, WORK, &LWORK, &info);
+
+	for( i = 0; i < fmin(nrows,ncols); i++){
+		if(i >= r){
+			S[i] = 0.0;
+		}
+	}
 	
+	double* C = alloc_array_z(nrows,ncols);
+	
+	C = mm(mm(U, nrows, nrows, diag(S,nrows), nrows, ncols), nrows, ncols, VT, ncols, ncols);
+	
+	free_array(A);
 	free_array(WORK);
 	free_array(U);
 	free_array(VT);
 	free_array(S);
+	//free_array(C);
 	
-	
-	
-	print_mat(S, fmin(nrows,ncols), 1);
-	
-	return A;
+	return C;
 }

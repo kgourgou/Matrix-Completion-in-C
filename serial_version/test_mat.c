@@ -21,7 +21,7 @@ double* test_mat(int r, int nrows, int ncols){
 	
 	for( i = 0; i < nrows; i++){
 		for( j = 0; j < ncols; j++ ){
-			A[map(i,j,ncols)] = (double)rand()/RAND_MAX;
+			A[map(i,j,ncols, 'n')] = (double)rand()/RAND_MAX;
 		}
 	}
 	

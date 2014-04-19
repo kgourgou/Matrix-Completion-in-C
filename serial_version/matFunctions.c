@@ -121,6 +121,15 @@ double* diag(double* A, int arows, int acols){
 }
 
 
+double* ma(double* A, int arows, int acols, double ascalar, double* B, int brows, int bcols, double bscalar, int* omega, int kn){
+	double* C = alloc_array_z(arows, acols);
+	int i;
+	
+	for( i = 0; i < kn; i++){
+		C[omega[i]] = ascalar*A[omega[i]] + bscalar*B[omega[i]];
+	}
+	return C;
+}
 
 
 

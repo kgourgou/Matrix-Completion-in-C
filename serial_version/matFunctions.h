@@ -6,4 +6,5 @@ double* alloc_array_z(int nrows, int ncol);
 void free_array(double* A);
 double* mm(double* A, int arows, int acols, char transA ,double* B, int brows, int bcols, char transB);
 double* diag(double* A, int arows, int acols);
+double* ma(double* A, int arows, int acols, double ascalar, double* B, int brows, int bcols, double bscalar, int* omega, int kn);
 void print_mat(double* A, int nrows, int ncols);

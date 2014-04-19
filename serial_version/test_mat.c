@@ -31,7 +31,7 @@ double* test_mat(int r, int nrows, int ncols){
 		}
 	}
 	
-	//print_mat(A, nrows, ncols);
+	print_mat(A, nrows, ncols);
 	
 	
 	

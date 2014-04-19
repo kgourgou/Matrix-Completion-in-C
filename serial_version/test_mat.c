@@ -28,7 +28,7 @@ double** test_mat(int r, int nrows, int ncols){
 	//ldu, __CLPK_doublereal *vt, __CLPK_integer *ldvt, __CLPK_doublereal *work, __CLPK_integer *lwork, 
 	//__CLPK_integer *info);
 	//SUBROUTINE DGESVD( JOBU, JOBVT, M, N, A, LDA, S, U, LDU, VT, LDVT, WORK, LWORK, INFO )
-	dgesvd_(&('A'), &('A'), &(nrows), &(ncols), A, nrows, S, U, nrows, VT, ncols, WORK, LWORK, info);
+	dgesvd_('A', 'A', nrows, ncols, A, nrows, S, U, nrows, VT, ncols, WORK, LWORK, info);
 	
 	return A;
 }

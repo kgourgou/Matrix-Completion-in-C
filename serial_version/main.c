@@ -14,6 +14,7 @@ int main(void){
  double *A = test_mat(rank, nrows, ncols);
  double *B = alloc_array_z(nrows, ncols);
  //double *B = test_mat(rank, nrows, ncols);
+
          
  int i,j;
 
@@ -29,10 +30,12 @@ int main(void){
  //A[1] = 1.0;
  //A[4] = 1.0;
  
+
  print_mat(B, nrows, ncols);
  //print_mat(mm(B, nrows, ncols, A, nrows, ncols),nrows, ncols);
  
  //print_mat(A, nrows, ncols);
+
  
  B = shrink(B, 0.0, nrows, ncols);
  

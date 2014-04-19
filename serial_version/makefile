@@ -9,7 +9,7 @@ flags =  -Wall
 dep = matCompl.h matFunctions.h
 
 # For every *.c file, put the corresponding *.o file here.
-objects = main.o  matFunctions.o RMSE.o test_mat.o shrink.o
+objects = main.o  matFunctions.o RMSE.o test_mat.o shrink.o Proj.o
 
 
 

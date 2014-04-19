@@ -86,7 +86,7 @@ int main(void)
 
 
 
-double* mm(double* A, int arows, int acols, double* B, int brows, int bcols){
+double* mm(double* A, int arows, int acols, char transA, double* B, int brows, int bcols, char transB){
 	double* C  = alloc_array(arows, bcols);
 	double sum;
 	int i;
@@ -97,7 +97,7 @@ double* mm(double* A, int arows, int acols, double* B, int brows, int bcols){
 		for( j = 0; j < brows; j++ ){
 			sum = 0;
 			for( k = 0; k < bcols; k++ ){
-				sum = sum + A[map(i, k, acols, 'n')] * B[map(k, j, bcols, 'n')];
+				sum = sum + A[map(i, k, acols, transA)] * B[map(k, j, bcols, transB)];
 			}	
 			C[map(i, j, bcols, 'n')] = sum;
 		}
@@ -105,12 +105,17 @@ double* mm(double* A, int arows, int acols, double* B, int brows, int bcols){
 	return C;
 }
 
-double* diag(double* A, int arows){
-	double* C  = alloc_array_z(arows, arows);
+double* diag(double* A, int arows, int acols){
+	double* C  = alloc_array_z(arows, acols);
 	int i;
+	int j;
 	
 	for( i = 0; i < arows; i++){
-		C[map(i, i, arows, 'n')] = A[i];
+		for( j = 0; j < acols; j++){
+			if( i == j ){
+				C[map(i, j, acols, 'n')] = A[i];
+			}
+		}
 	}
 	return C;
 }
@@ -132,7 +137,7 @@ int i,j;
 
  for(i = 0;i < nrows;i++){
    for(j = 0;j < ncols;j++){
-     printf("%1.3f ",A[map(i,j,ncols, 'n')]);
+     printf("%1.5f ",A[map(i,j,ncols, 'n')]);
    }
    printf("\n");
  }

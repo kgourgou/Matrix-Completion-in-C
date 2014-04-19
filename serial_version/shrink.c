@@ -28,12 +28,13 @@ double* shrink(double* A, double tau, int nrows, int ncols){
 	dgesvd_(&JOBU, &JOBVT, &nrows, &ncols, A, &nrows, S, U, &nrows, VT, &ncols, WORK, &LWORK, &info);
 
 	for( i = 0; i < fmin(nrows,ncols); i++){
-		//S[i] = fmax(0.0, S[i] - tau);
+			S[i] = fmax(0.0, S[i] - tau);
 	}
 	
 	double* C = alloc_array_z(nrows,ncols);
 	
-	C = mm(mm(U, nrows, nrows, diag(S,nrows), nrows, ncols), nrows, ncols, VT, ncols, ncols);
+	//C = mm(mm(U, nrows, nrows, 't', diag(S,nrows, ncols), nrows, ncols, 'n'), nrows, ncols, 'n', VT, ncols, ncols, 't');
+	C = mm(mm(VT, ncols, ncols, 'n', diag(S,ncols, nrows), ncols, nrows, 'n'), ncols, nrows, 'n', U, nrows, nrows, 'n');
 	
 	free_array(A);
 	free_array(WORK);

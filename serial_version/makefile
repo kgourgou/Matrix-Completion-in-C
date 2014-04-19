@@ -19,7 +19,7 @@ OBJ = $(patsubst %, $(obj_dir)/%,$(objects))
 
 a.out : $(OBJ) 
 	$(cc) $(flags) $(OBJ) -lm -llapack 
-        
+	ctags -R .
 
 $(obj_dir)/%.o : %.c $(dep)
 	$(cc) $(flags) -c $< -o $@  

@@ -18,7 +18,7 @@ int main(void){
 
  for(i = 0; i < nrows;i++){
      for(j = 0; j < ncols;j++){
-        A[MAP(i,j,ncols)] = i+j;
+        A[map(i,j,ncols)] = i+j;
      }
  }
  

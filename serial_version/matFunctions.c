@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<assert.h>
 
-int MAP(int i, int j, int ncols){
+int map(int i, int j, int ncols){
 	return i*ncols + j;
 }
 

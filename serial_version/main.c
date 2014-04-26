@@ -12,10 +12,10 @@ int main(void){
  int rank = 1;
          
 
- int numIter = 100;
- int i;
- double tau = 1.2*nrows;
- double delta = 1.4;
+ int numIter = 1000;
+ int i,j;
+ double tau = 1.5*nrows;
+ double delta = 1.9;
  
  int omega_c[] = {0}; // places of unknown values.
  int omega[] = {1,2,3}; // places of known values.
@@ -23,18 +23,20 @@ int main(void){
  int ku = 1; // Number of unknown values.
  int kn = (nrows*ncols)-ku; // Number of known values.
  
- //double *M = test_mat(rank, nrows, ncols);
- double *M = 
+ double *M = test_mat(rank, nrows, ncols);
  double *Y = alloc_array_z(nrows, ncols);
  double *Z = alloc_array(nrows, ncols);
  double *dummyMatrix = alloc_array_z(nrows, ncols);
- 
- printf("Original matrix = \n");
- print_mat(M, nrows, ncols);
- 
+ double *dummy2 = alloc_array_z(nrows,ncols);
+
 
  for( i = 0; i < numIter; i++){
- 	Z = shrink(Y, tau, nrows, ncols);
+ 
+    for(j=0; j <  ncols*nrows;j++){
+        dummy2[j] = Y[j];
+    }
+
+    Z = shrink(dummy2, tau, nrows, ncols);
 
     Proj_sub(M, Z, omega, kn, dummyMatrix);
 
@@ -43,14 +45,10 @@ int main(void){
  
  printf("Error = %f\n\n", RMSE2(M, Z, omega_c, ku));
 
- printf("M =\n ");
- print_mat(M,nrows,ncols);
- 
- printf("Z =\n ");
- print_mat(Z,nrows,ncols);
 
  free_array(Y);
  free_array(M); 
+ free_array(dummy2);
  free_array(Z);
  free_array(dummyMatrix);
  return 0;

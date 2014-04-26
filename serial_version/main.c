@@ -23,7 +23,8 @@ int main(void){
  int ku = 1; // Number of unknown values.
  int kn = (nrows*ncols)-ku; // Number of known values.
  
- double *M = test_mat(rank, nrows, ncols);
+ //double *M = test_mat(rank, nrows, ncols);
+ double *M = 
  double *Y = alloc_array_z(nrows, ncols);
  double *Z = alloc_array(nrows, ncols);
  double *dummyMatrix = alloc_array_z(nrows, ncols);

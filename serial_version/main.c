@@ -7,10 +7,9 @@
 #include "matCompl.h"
 
 int main(void){ 
- int nrows = 2;
- int ncols = 2;
- int rank = 1;
-         
+ int nrows = 4;
+ int ncols = 4;
+ int rank = 1;        
 
 
 
@@ -19,12 +18,13 @@ int main(void){
  double tau = 1.5*nrows;
  double delta = 1.9;
  
- int omega_c[] = {0}; // places of unknown values.
- int omega[] = {1,2,3}; // places of known values.
-
- int ku = 1; // Number of unknown values.
+ int ku = 3; // Number of unknown values.
+int omega_c[] = {0, 5, 7}; // places of unknown values.
  int kn = (nrows*ncols)-ku; // Number of known values.
-
+  int omega[kn]; // places of known values.
+ 
+ create_omega(omega_c, ku, omega, kn, nrows*ncols);
+ 
  double *Y = alloc_array_z(nrows, ncols);
   double *Z = alloc_array_z(nrows, ncols);
   double *M = test_mat(rank, nrows, ncols);
@@ -37,13 +37,14 @@ int main(void){
     for(j=0; j <  ncols*nrows;j++){
         dummy2[j] = Y[j];
     }
-
     Z = shrink(dummy2, tau, nrows, ncols);
  	Proj_sub(M, Z, omega, kn, dummyMatrix);
- 	ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn, dummy2);
+ 	ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn, Y);
  }
  printf("Error = %f\n\n", RMSE2(M, Z, omega_c, ku));
 
+print_mat(M, nrows, ncols);
+print_mat(Z, nrows, ncols);
 
  free_array(Y);
  free_array(M); 

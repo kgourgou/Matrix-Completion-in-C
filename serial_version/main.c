@@ -12,11 +12,10 @@ int main(void){
  int rank = 1;        
 
 
-
  int numIter = 1000;
  int i,j;
  double tau = 1.5*nrows;
- double delta = 1.9;
+ double delta = 1.4;
  
  int ku = 3; // Number of unknown values.
 int omega_c[] = {0, 5, 7}; // places of unknown values.
@@ -43,8 +42,9 @@ int omega_c[] = {0, 5, 7}; // places of unknown values.
  }
  printf("Error = %f\n\n", RMSE2(M, Z, omega_c, ku));
 
-print_mat(M, nrows, ncols);
-print_mat(Z, nrows, ncols);
+ printf("Known value = %f\n", M[0]);
+ printf("Approximation = %f\n", Z[0]);
+
 
  free_array(Y);
  free_array(M); 
@@ -54,3 +54,4 @@ print_mat(Z, nrows, ncols);
  return 0;
 }
  
+

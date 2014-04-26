@@ -140,7 +140,7 @@ void ma(double* A, int arows, int acols, double ascalar, double* B, int brows, i
 
 	/* 
 	 * 
-	 * matrix add the omega set of elements of A and B and set all other elements to 0
+	 * matrix add the omega set of elements of A and B
 	* */
 	//double* C = alloc_array_z(arows, acols);
 	int i;

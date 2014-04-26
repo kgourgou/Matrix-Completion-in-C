@@ -13,15 +13,16 @@ int main(void){
  int rank = 2;
          
 
- int numIter = 5;
+ int numIter = 100;
  int i;
  double tau = 1.0;
- double delta = 1.0;
+ double delta = 0.1;
  
- int omega[] = {0, 2};
- int kn = 2;
+ int omega[] = {0, 1, 2};
+ int kn = 3;
  
- double *M = test_mat(rank, nrows, ncols);
+ //double *M = test_mat(rank, nrows, ncols);
+ double *M = 
  double *Y = alloc_array_z(nrows, ncols);
  double *Z = alloc_array(nrows, ncols);
  double *dummyMatrix = alloc_array_z(nrows, ncols);
@@ -34,7 +35,12 @@ int main(void){
  	Y = ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn);
  }
  
- printf("%f", RMSE2(M, Z, omega, kn));
+ print_mat(Z, nrows, ncols);
+ 
+printf("\n%f\n", RMSE2(M, Z, omega, kn));
+
+
+
 
 
  free_array(Y);

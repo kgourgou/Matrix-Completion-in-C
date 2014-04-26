@@ -10,9 +10,8 @@ int main(void){
  int nrows = 4;
  int ncols = 4;
  int rank = 2;
-         
 
- int numIter = 100;
+ int numIter = 1000;
  int i,j;
  double tau = 1.5*nrows;
  double delta = 1.4;
@@ -22,10 +21,10 @@ int main(void){
 
  int ku = 1; // Number of unknown values.
  int kn = (nrows*ncols)-ku; // Number of known values.
- 
- double *M = test_mat(rank, nrows, ncols);
+
  double *Y = alloc_array_z(nrows, ncols);
- double *Z = alloc_array(nrows, ncols);
+  double *Z = alloc_array_z(nrows, ncols);
+  double *M = test_mat(rank, nrows, ncols);
  double *dummyMatrix = alloc_array_z(nrows, ncols);
  double *dummy2 = alloc_array_z(nrows,ncols);
 
@@ -37,12 +36,9 @@ int main(void){
     }
 
     Z = shrink(dummy2, tau, nrows, ncols);
-
-    Proj_sub(M, Z, omega, kn, dummyMatrix);
-
- 	Y = ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn);
+ 	Proj_sub(M, Z, omega, kn, dummyMatrix);
+ 	ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn, dummy2);
  }
- 
  printf("Error = %f\n\n", RMSE2(M, Z, omega_c, ku));
  printf("Known value = %f\n", M[0]);
  printf("Approximation = %f\n", Z[0]);

@@ -87,6 +87,14 @@ int main(void)
 
 
 double* mm(double* A, int arows, int acols, char transA, double* B, int brows, int bcols, char transB){
+
+    /*
+     *  
+     * matrix multiply A(arows x acols) by B(brows x bcols) with the option to transpose
+     * A and/or B before performing the operation  
+     *
+     * */
+
 	double* C  = alloc_array(arows, bcols);
 	double sum;
 	int i;
@@ -106,6 +114,13 @@ double* mm(double* A, int arows, int acols, char transA, double* B, int brows, i
 }
 
 double* diag(double* A, int arows, int acols){
+
+    /*
+     *  
+     * creates a diagonal matrix from a vector A.
+     *
+     * */
+
 	double* C  = alloc_array_z(arows, acols);
 	int i;
 	int j;
@@ -121,14 +136,18 @@ double* diag(double* A, int arows, int acols){
 }
 
 
-double* ma(double* A, int arows, int acols, double ascalar, double* B, int brows, int bcols, double bscalar, int* omega, int kn){
-	double* C = alloc_array_z(arows, acols);
+void ma(double* A, int arows, int acols, double ascalar, double* B, int brows, int bcols, double bscalar, int* omega, int kn, double* dummyMatrix){
+
+	/* 
+	 * 
+	 * matrix add the omega set of elements of A and B
+	* */
+	//double* C = alloc_array_z(arows, acols);
 	int i;
 	
 	for( i = 0; i < kn; i++){
-		C[omega[i]] = ascalar*A[omega[i]] + bscalar*B[omega[i]];
+		dummyMatrix[omega[i]] = ascalar*A[omega[i]] + bscalar*B[omega[i]];
 	}
-	return C;
 }
 
 

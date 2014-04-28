@@ -9,11 +9,11 @@
 
 
 int main(void){ 
-	int nrows = 4;
-	int ncols = 4;
-	int rank = 1;        
+	int nrows = 40;
+	int ncols = 40;
+	int rank = 35;        
 
-	int numIter = 5;
+	int numIter = 10000;
 	double tau = 1.5*nrows;
 	double delta = 1.4;
 	double tol = 1.0;	//		terrible choice of value, but this isn't implemented yet anyways

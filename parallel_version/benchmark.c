@@ -46,5 +46,6 @@ double runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int om
 	
 	seconds = difftime(time(NULL),start_time);	//need to output this to file
 
+    printf("Warning: Seconds returns garbage.")
 	return seconds;
 }

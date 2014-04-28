@@ -50,8 +50,8 @@ NAN	math.h	74;"	d
 OBJ	makefile	/^OBJ = $(patsubst %, $(obj_dir)\/%,$(objects))$/;"	m
 OVERFLOW	math.h	618;"	d
 PLOSS	math.h	621;"	d
-Proj	Proj.c	/^void Proj(double *A, int* Omega, int kn, double* Z){$/;"	f
-Proj_sub	Proj.c	/^void Proj_sub(double *A, double *B, int* Omega, int kn, double* Z){$/;"	f
+Proj	Proj.c	/^void Proj(double *A, int* Omega, int kn, double* Z, char method){$/;"	f
+Proj_sub	Proj.c	/^void Proj_sub(double *A, double *B, int* Omega, int kn, double* Z, char method){$/;"	f
 RMSE	RMSE.c	/^double RMSE(double* X, double* M, int  ncols, int nrows){$/;"	f
 RMSE2	RMSE.c	/^double RMSE2(double* X, double* M, int* omega, int kn){$/;"	f
 SING	math.h	617;"	d
@@ -909,7 +909,7 @@ print_mat	matFunctions.c	/^void print_mat(double* A, int nrows, int ncols){$/;"	
 r	lapack.h	/^  typedef struct{double r,i;} doublecomplex;$/;"	m	struct:__anon2
 r	lapack.h	/^  typedef struct{float r,i;} complex;$/;"	m	struct:__anon1
 retval	math.h	/^    double retval;$/;"	m	struct:exception
-runBenchmark	benchmark.c	/^void runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int omega_c[], int kn, int omega[], int numIter, double tol, char* file_out, double tau, double delta, double* Y, double* Z, double* M, double* dummyMatrix, double* dummy2){    $/;"	f
+runBenchmark	benchmark.c	/^double runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int omega_c[], int kn, int omega[], int numIter, double tol, char* file_out, double tau, double delta, double* Y, double* Z, double* M, double* dummyMatrix, double* dummy2){    $/;"	f
 sbbcsd	lapack.h	12737;"	d
 sbdsdc	lapack.h	12771;"	d
 sbdsqr	lapack.h	12790;"	d
@@ -997,7 +997,7 @@ sgttrf	lapack.h	14213;"	d
 sgttrs	lapack.h	14225;"	d
 sgtts2	lapack.h	14241;"	d
 shgeqz	lapack.h	14256;"	d
-shrink	shrink.c	/^double* shrink(double* A, double tau, int nrows, int ncols){$/;"	f
+shrink	shrink.c	/^double* shrink(double* A, double tau, int nrows, int ncols, char method){$/;"	f
 shsein	lapack.h	14281;"	d
 shseqr	lapack.h	14305;"	d
 signbit	math.h	177;"	d

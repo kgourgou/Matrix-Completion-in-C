@@ -1,6 +1,6 @@
 /*
 
-  Serial version of matrix completion code. 
+  Parallel version of matrix completion code. 
 	
 */
 
@@ -11,7 +11,7 @@
 int main(void){ 
 	int nrows = 200;
 	int ncols = 200;
-	int rank = 35;        
+	int rank = 4;        
 
 	int numIter = 100;
 	double tau = 1.5*nrows;
@@ -33,9 +33,13 @@ int main(void){
 	
 	double *M = test_mat(rank, nrows, ncols);
 	
-	printf("%f", runBenchmark( 'P', nrows, ncols, rank, ku, omega_c, kn, omega, numIter, tol, file_out, tau, delta, Y, Z, M, dummyMatrix, dummy2));
-	
-	
+	printf("Elapsed time : %1.3f min\n", runBenchmark( 'P', nrows, ncols, rank, ku, omega_c, kn, omega, numIter, tol, file_out, tau, delta, Y, Z, M, dummyMatrix, dummy2));
+
+    printf("RMSE : %1.2g\n", RMSE2(M, Z, omega_c, ku));
+
+
+
+    // Cleaning up	
 	free_array(Y);
 	free_array(M); 
 	free_array(dummy2);

@@ -21,9 +21,9 @@ file_out argument
 
 double runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int omega_c[], int kn, int omega[], int numIter, double tol, char* file_out, double tau, double delta, double* Y, double* Z, double* M, double* dummyMatrix, double* dummy2){    
 
-    time_t start_time;
+    clock_t start_time = clock();
 	int i, j;
-    double seconds;
+    double timing;
     printf("Now running benchmark\n");
 
 	
@@ -44,8 +44,7 @@ double runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int om
 		ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn, Y);
 	}
 	
-	seconds = difftime(time(NULL),start_time);	//need to output this to file
+	timing = (clock()-start_time)*1000/CLOCKS_PER_SEC * 1/60.0;	//need to output this to file
 
-    printf("Warning: Seconds returns garbage.");
-	return seconds;
+   	return timing;
 }

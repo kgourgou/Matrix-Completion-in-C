@@ -13,7 +13,7 @@
     Then it returns B.
 
 */
-double* shrink(double* A, double tau, int nrows, int ncols){
+double* shrink(double* A, double tau, int nrows, int ncols, char method){
 	int i;
 	int info = 0;
 	char JOBU = 'A';
@@ -24,13 +24,21 @@ double* shrink(double* A, double tau, int nrows, int ncols){
 	double* U = alloc_array(nrows, nrows);
 	double* VT = alloc_array(ncols, ncols);
 	double* S = alloc_array(fmin(nrows,ncols), fmin(nrows, ncols));
+	int min_dim = fmin(nrows,ncols);
 	
 	dgesvd_(&JOBU, &JOBVT, &nrows, &ncols, A, &nrows, S, U, &nrows, VT, &ncols, WORK, &LWORK, &info);
-
-	for( i = 0; i < fmin(nrows,ncols); i++){
-			S[i] = fmax(0.0, S[i] - tau);
-	}
 	
+	if( method == 'S' ){
+		for( i = 0; i < min_dim; i++){
+				S[i] = fmax(0.0, S[i] - tau);
+		}
+	}
+	else if( method == 'P' ){
+		#pragma omp parallel for
+		for(i=0; i < min_dim;i++){
+				S[i] = fmax(0.0, S[i] - tau);
+		}
+	}
 	double* C = alloc_array_z(nrows,ncols);
 	
 	//C = mm(mm(U, nrows, nrows, 't', diag(S,nrows, ncols), nrows, ncols, 'n'), nrows, ncols, 'n', VT, ncols, ncols, 't');

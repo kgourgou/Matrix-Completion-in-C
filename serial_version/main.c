@@ -37,7 +37,7 @@ int main(void){
 
     Z = shrink(dummy2, tau, nrows, ncols);
  	Proj_sub(M, Z, omega, kn, dummyMatrix);
- 	ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn, dummy2);
+ 	ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn, Y);
  }
  printf("Error = %f\n\n", RMSE2(M, Z, omega_c, ku));
  printf("Known value = %f\n", M[0]);

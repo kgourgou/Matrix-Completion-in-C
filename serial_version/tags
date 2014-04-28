@@ -17,7 +17,7 @@ dep	makefile	/^dep = matCompl.h matFunctions.h$/;"	m
 diag	matFunctions.c	/^double* diag(double* A, int arows, int acols){$/;"	f
 flags	makefile	/^flags =  -Wall  $/;"	m
 free_array	matFunctions.c	/^void free_array(double* A){$/;"	f
-ma	matFunctions.c	/^double* ma(double* A, int arows, int acols, double ascalar, double* B, int brows, int bcols, double bscalar, int* omega, int kn){$/;"	f
+ma	matFunctions.c	/^void ma(double* A, int arows, int acols, double ascalar, double* B, int brows, int bcols, double bscalar, int* omega, int kn, double* dummyMatrix){$/;"	f
 main	main.c	/^int main(void){ $/;"	f
 map	matFunctions.c	/^int map(int i, int j, int ncols, char transpose){$/;"	f
 mm	matFunctions.c	/^double* mm(double* A, int arows, int acols, char transA, double* B, int brows, int bcols, char transB){$/;"	f

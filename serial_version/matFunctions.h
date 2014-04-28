@@ -11,4 +11,7 @@ void print_mat(double* A, int nrows, int ncols);
 void Proj(double *A, int* Omega, int kn, double* Z);
 void Proj_sub(double *A, double *B, int* Omega, int kn, double* Z);
 
-void ma(double* A, int arows, int acols, double ascalar, double* B, int brows, int bcols, double bscalar, int* omega, int kn, double* dummyMatrix);
+void ma(double* A, int arows, int acols, double ascalar, double* B, int brows, 
+int bcols, double bscalar, int* omega, int kn, double* dummyMatrix);
+
+void create_omega(int* omega_c, int ku, int* omega, int kn, int numElts);

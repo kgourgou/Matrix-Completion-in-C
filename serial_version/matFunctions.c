@@ -171,3 +171,21 @@ int i,j;
  }
    printf("\n");
 }
+
+
+/* takes in SORTED omega_c and ku and outputs SORTED omega and kn */
+void create_omega(int* omega_c, int ku, int* omega, int kn, int numElts){
+	kn = numElts - ku;
+	int iter, c_iter;
+	int candidate_index;
+	
+	for( candidate_index = 0; candidate_index < numElts; candidate_index++){
+		if(  c_iter < ku && omega_c[c_iter] == candidate_index){
+			c_iter++;
+		}
+		else{
+			omega[iter] = candidate_index;
+			iter++;
+		}
+	}
+}

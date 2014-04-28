@@ -6,10 +6,10 @@ cc = gcc
 flags =  -Wall -fopenmp
 
 # *.h files
-dep = matCompl.h matFunctions.h
+dep = matCompl.h matFunctions.h benchmark.h
 
 # For every *.c file, put the corresponding *.o file here.
-objects = main.o  matFunctions.o RMSE.o test_mat.o shrink.o Proj.o
+objects = main.o  matFunctions.o RMSE.o test_mat.o shrink.o Proj.o benchmark.o
 
 
 

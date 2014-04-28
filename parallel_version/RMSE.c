@@ -44,7 +44,14 @@ double RMSE(double* X, double* M, int  ncols, int nrows){
  * * */
 
 double RMSE2(double* X, double* M, int* omega, int kn){
-	int i;
+  /*
+   * Root mean square error over the unknown elements of M. 
+   * omega has the indices of the unknown elements.
+   * kn is the number of unknown elements.
+   *
+   * */
+     
+    int i;
 	 double error = 0.0;
 
  	for(i = 0; i < kn; i++){   

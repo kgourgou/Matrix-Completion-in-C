@@ -13,6 +13,7 @@ SVT	SVT.c	/^double* SVT(double* X, double* M, int maxIter, double tol, int M){$/
 alloc_array	matFunctions.c	/^double* alloc_array(int nrows, int ncol){$/;"	f
 alloc_array_z	matFunctions.c	/^double* alloc_array_z(int nrows, int ncol){$/;"	f
 cc	makefile	/^cc = gcc$/;"	m
+create_omega	matFunctions.c	/^void create_omega(int* omega_c, int ku, int* omega, int kn, int numElts){$/;"	f
 dep	makefile	/^dep = matCompl.h matFunctions.h$/;"	m
 diag	matFunctions.c	/^double* diag(double* A, int arows, int acols){$/;"	f
 flags	makefile	/^flags =  -Wall  $/;"	m

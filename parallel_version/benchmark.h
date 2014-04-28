@@ -11,4 +11,7 @@ double tau, // = 1.5*nrows;
  double delta // = 1.4;
 */
 
-void runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int omega_c[], int numIter, double tol, char* file_out, double tau, double delta);
+
+
+
+double runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int omega_c[], int kn, int omega[], int numIter, double tol, char* file_out, double tau, double delta, double* Y, double* Z, double* M, double* dummyMatrix, double* dummy2);

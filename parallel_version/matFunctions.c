@@ -63,28 +63,6 @@ void free_array(double* A){
  free(A);
 }
 
-/*
-int main(void) 
- {
-	const int M=4, N=4, P=4;
-	int A[M][N], int B[N][P], int C[M][P];
-	for (int i = 0; i != M; ++i) 
-	{
- 		for (int j = 0; j != N; ++j)
-		{
-			int sum = 0;
-			for (int k = 0; k != P; ++k)
-			{
-				sum += A[i][k] * B[k][j];
-			}
-			C[i][j] = sum;
-		}
-	}
-	return 0;
- }
-*/
-
-
 
 double* mm(double* A, int arows, int acols, char transA, double* B, int brows, int bcols, char transB){
 
@@ -151,11 +129,6 @@ void ma(double* A, int arows, int acols, double ascalar, double* B, int brows, i
 }
 
 
-
-
-
-
-
 void print_mat(double* A, int nrows, int ncols){
 /*
  * Prints an nrows x ncols array as a matrix.
@@ -178,7 +151,10 @@ void create_omega(int* omega_c, int ku, int* omega, int kn, int numElts){
 	kn = numElts - ku;
 	int iter, c_iter;
 	int candidate_index;
-	
+ 
+    c_iter = 0;
+    iter = 0;
+
 	for( candidate_index = 0; candidate_index < numElts; candidate_index++){
 		if(  c_iter < ku && omega_c[c_iter] == candidate_index){
 			c_iter++;

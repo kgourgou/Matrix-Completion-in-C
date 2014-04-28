@@ -20,11 +20,14 @@ file_out argument
 
 
 void runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int omega_c[], int kn, int omega[], int numIter, double tol, char* file_out, double tau, double delta, double* Y, double* Z, double* M, double* dummyMatrix, double* dummy2){    
-	time_t start_time;
+
+    time_t start_time;
   	double seconds;
   	time(&start_time);  /* get current time; same as: now = time(NULL)  */
 
 	int i, j;
+
+    printf("Now running benchmark\n");
 
 	for( i = 0; i < numIter; i++){
 		for(j=0; j <  ncols*nrows;j++){
@@ -35,4 +38,5 @@ void runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int omeg
 		ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn, Y);
 	}
 	seconds = difftime(time(NULL),start_time);	//need to output this to file
+
 }

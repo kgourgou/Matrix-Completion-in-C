@@ -9,11 +9,11 @@
 
 
 int main(void){ 
-	int nrows = 40;
-	int ncols = 40;
+	int nrows = 200;
+	int ncols = 200;
 	int rank = 35;        
 
-	int numIter = 10000;
+	int numIter = 100;
 	double tau = 1.5*nrows;
 	double delta = 1.4;
 	double tol = 1.0;	//		terrible choice of value, but this isn't implemented yet anyways
@@ -32,10 +32,10 @@ int main(void){
 	double *dummy2 = alloc_array_z(nrows,ncols);
 	
 	double *M = test_mat(rank, nrows, ncols);
-
-
-	runBenchmark( 'S', nrows, ncols, rank, ku, omega_c, kn, omega, numIter, tol, file_out, tau, delta, Y, Z, M, dummyMatrix, dummy2);
-
+	
+	printf("%f", runBenchmark( 'P', nrows, ncols, rank, ku, omega_c, kn, omega, numIter, tol, file_out, tau, delta, Y, Z, M, dummyMatrix, dummy2));
+	
+	
 	free_array(Y);
 	free_array(M); 
 	free_array(dummy2);

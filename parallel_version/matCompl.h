@@ -34,7 +34,7 @@ double* test_mat(int r, int numRows, int numCols);
     Then it returns B.
 
 */
-double* shrink(double* A, double tau, int nrows, int ncols);
+double* shrink(double* A, double tau, int nrows, int ncols, char method);
 
 /*
 

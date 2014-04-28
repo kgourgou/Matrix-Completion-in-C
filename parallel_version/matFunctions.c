@@ -151,10 +151,9 @@ void create_omega(int* omega_c, int ku, int* omega, int kn, int numElts){
 	kn = numElts - ku;
 	int iter, c_iter;
 	int candidate_index;
- 
-    c_iter = 0;
-    iter = 0;
-
+	
+	iter = 0;
+	c_iter = 0;
 	for( candidate_index = 0; candidate_index < numElts; candidate_index++){
 		if(  c_iter < ku && omega_c[c_iter] == candidate_index){
 			c_iter++;

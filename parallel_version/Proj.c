@@ -10,7 +10,7 @@
  * */
 
 
-void Proj(double *A, int* Omega, int kn, double* Z){
+void Proj(double *A, int* Omega, int kn, double* Z, char method){
 
     /*
      * Proj applies a projection on the space of known elements of A. 
@@ -43,7 +43,7 @@ void Proj(double *A, int* Omega, int kn, double* Z){
 
 }
 
-void Proj_sub(double *A, double *B, int* Omega, int kn, double* Z){
+void Proj_sub(double *A, double *B, int* Omega, int kn, double* Z, char method){
 
     /*
      * Calculates Z <- A-B over Omega.
@@ -54,9 +54,18 @@ void Proj_sub(double *A, double *B, int* Omega, int kn, double* Z){
     assert(Z);
     
     int i;
-    for(i = 0; i < kn; i++){
-        Z[Omega[i]] = A[Omega[i]] - B[Omega[i]];
+    if(method =='S'){
+		for(i = 0; i < kn; i++){
+			Z[Omega[i]] = A[Omega[i]] - B[Omega[i]];
+		}
     }
+    else if(method =='P'){
+    	#pragma omp parallel for
+    	for(i = 0; i < kn; i++){
+			Z[Omega[i]] = A[Omega[i]] - B[Omega[i]];
+		}
+	}
+
 
 }
 

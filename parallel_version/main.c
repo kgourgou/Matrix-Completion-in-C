@@ -5,7 +5,7 @@
 */
 
 #include "matCompl.h"
-
+#include "benchmark.h"
 int main(void){ 
  int nrows = 4;
  int ncols = 4;
@@ -29,7 +29,6 @@ int omega_c[] = {0, 5, 7}; // places of unknown values.
   double *M = test_mat(rank, nrows, ncols);
  double *dummyMatrix = alloc_array_z(nrows, ncols);
  double *dummy2 = alloc_array_z(nrows,ncols);
-
 
  for( i = 0; i < numIter; i++){
  

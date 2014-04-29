@@ -9,9 +9,9 @@
 
 
 int main(void){ 
-	int nrows = 200;
-	int ncols = 200;
-	int rank = 35;        
+	int nrows = 20;
+	int ncols = 20;
+	int rank = 10;        
 
 	int numIter = 100;
 	double tau = 1.5*nrows;

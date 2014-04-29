@@ -42,9 +42,13 @@ double runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int om
 		Z = shrink(dummy2, tau, nrows, ncols, method);
 		Proj_sub(M, Z, omega, kn, dummyMatrix, method);
 		ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn, Y);
+		// Absolute tolerance used here.
+		if(RMSE2(M,Z,omega_c,ku)<tol){
+			break;
+		}
 	}
 	
-	timing = (clock()-start_time)*1000/CLOCKS_PER_SEC * 1/60.0;	//need to output this to file
+	timing = (clock()-start_time)*1000/(CLOCKS_PER_SEC);	//need to output this to file
 
-   	return timing;
+   	return (timing/1000);
 }

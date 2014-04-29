@@ -20,11 +20,12 @@ file_out argument
 
 
 double runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int omega_c[], int kn, int omega[], int numIter, double tol, char* file_out, double tau, double delta, double* Y, double* Z, double* M, double* dummyMatrix, double* dummy2){    
-	time_t start_time;
-  	double seconds;
-  	time(&start_time);  /* get current time; same as: now = time(NULL)  */
 
+    clock_t start_time = clock();
 	int i, j;
+    double timing;
+    printf("Now running benchmark\n");
+
 	
 	for( i = 0; i < numIter; i++){
 		if(method == 'S'){
@@ -43,6 +44,7 @@ double runBenchmark( char method, int nrows, int ncols, int rank,	int ku, int om
 		ma(Y, ncols, nrows, 1.0, dummyMatrix, ncols, nrows, delta, omega, kn, Y);
 	}
 	
-	seconds = difftime(time(NULL),start_time);	//need to output this to file
-	return seconds;
+	timing = (clock()-start_time)*1000/CLOCKS_PER_SEC * 1/60.0;	//need to output this to file
+
+   	return timing;
 }

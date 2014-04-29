@@ -17,8 +17,8 @@ int main(void){
  double tau = 1.5*nrows;
  double delta = 1.4;
  
- int ku = 3; // Number of unknown values.
-int omega_c[] = {0, 5, 7}; // places of unknown values.
+ int ku = 2; // Number of unknown values.
+int omega_c[] = {0, 5}; // places of unknown values.
  int kn = (nrows*ncols)-ku; // Number of known values.
   int omega[kn]; // places of known values.
  

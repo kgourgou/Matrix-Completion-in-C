@@ -63,28 +63,6 @@ void free_array(double* A){
  free(A);
 }
 
-/*
-int main(void) 
- {
-	const int M=4, N=4, P=4;
-	int A[M][N], int B[N][P], int C[M][P];
-	for (int i = 0; i != M; ++i) 
-	{
- 		for (int j = 0; j != N; ++j)
-		{
-			int sum = 0;
-			for (int k = 0; k != P; ++k)
-			{
-				sum += A[i][k] * B[k][j];
-			}
-			C[i][j] = sum;
-		}
-	}
-	return 0;
- }
-*/
-
-
 
 double* mm(double* A, int arows, int acols, char transA, double* B, int brows, int bcols, char transB){
 
@@ -149,11 +127,6 @@ void ma(double* A, int arows, int acols, double ascalar, double* B, int brows, i
 		dummyMatrix[omega[i]] = ascalar*A[omega[i]] + bscalar*B[omega[i]];
 	}
 }
-
-
-
-
-
 
 
 void print_mat(double* A, int nrows, int ncols){

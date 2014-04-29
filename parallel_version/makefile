@@ -1,5 +1,8 @@
-# K.G
-# kgourgou@umass.edu
+# Makefile for the parallel version of the matrix
+# completion routines. 
+#
+# Matt Brown, Kostantinos Gourgoulias
+
 
 cc = gcc
 
